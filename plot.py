@@ -28,5 +28,6 @@ def plot_wells(well_coords):
 
 if __name__ == '__main__':
     from database import query_db
+
     results = query_db(1500, 0.1)
-    plot_wells(results)
+    plot_wells(results).save('test.png')
