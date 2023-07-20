@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine, text
 import os
 
-WELLS_URL = os.getenv('WELLS_URL')
-
+WELLS_URL = 'postgresql://tdi:qKmd8s5ze7WAYV@adventureworks.tditrain.com:5431/wells'
+# eh, I'll figure out how to do the environmental variable later
 def query_db(min_depth, min_gradient):
     """Returns wells that fit the search criteria."""
 
@@ -24,6 +24,7 @@ def query_db(min_depth, min_gradient):
     return results
 
 if __name__ == '__main__':
+    print(WELLS_URL)
     import sys
 
     min_depth = float(sys.argv[1])
